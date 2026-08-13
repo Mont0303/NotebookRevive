@@ -1,0 +1,88 @@
+/* =========================================================
+ * matrix-q464b-lightdm — tema GTK3 pro lightdm-gtk-greeter
+ * Seletores genéricos (não dependem de IDs específicos do
+ * greeter), então funcionam mesmo se a versão do widget
+ * mudar um pouco entre distros/versões.
+ * ========================================================= */
+
+@define-color accent #39ff5c;
+@define-color bg #0d1117;
+@define-color panelbg #04120c;
+@define-color fg #c9d1d9;
+@define-color dim #6e7681;
+
+window {
+    background-color: transparent;
+    color: @fg;
+    font-family: "JetBrains Mono";
+}
+
+/* painel superior (relógio, indicador de sessão/energia) */
+#panel_window,
+GdmSessionOptionWidget,
+.lightdm-gtk-greeter-panel {
+    background-color: @panelbg;
+    color: @accent;
+    border-bottom: 2px solid @accent;
+}
+
+/* caixa central de login */
+GtkEventBox,
+.login-window {
+    background-color: @panelbg;
+    border: 2px solid @accent;
+    border-radius: 6px;
+}
+
+label {
+    color: @fg;
+    font-family: "JetBrains Mono";
+}
+
+entry {
+    background-color: @bg;
+    color: @accent;
+    border: 1px solid @accent;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-family: "JetBrains Mono";
+    caret-color: @accent;
+}
+
+entry:focus {
+    border-color: @accent;
+    box-shadow: 0 0 4px @accent;
+}
+
+button {
+    background-color: @bg;
+    color: @accent;
+    border: 2px solid @accent;
+    border-radius: 4px;
+    font-family: "JetBrains Mono";
+    padding: 4px 12px;
+}
+
+button:hover {
+    background-color: @panelbg;
+    color: @accent;
+}
+
+combobox,
+combobox button {
+    background-color: @bg;
+    color: @fg;
+    border: 1px solid @accent;
+    border-radius: 3px;
+}
+
+menu, .menu {
+    background-color: @panelbg;
+    color: @fg;
+    border: 1px solid @accent;
+}
+
+menuitem:hover {
+    background-color: @bg;
+    color: @accent;
+}

@@ -1,0 +1,58 @@
+# =========================================================
+# zathura — leitor de PDF (Motion Plus Q464B theme)
+# Leve, controlado por teclado (estilo vim), combina com o
+# resto: fundo quase preto, texto verde.
+# =========================================================
+
+# ---- cores da interface ----
+set default-bg              "#0d1117"
+set default-fg              "#c9d1d9"
+
+set statusbar-fg            "#39ff5c"
+set statusbar-bg            "#161b22"
+
+set inputbar-bg             "#0d1117"
+set inputbar-fg             "#39ff5c"
+
+set notification-bg         "#161b22"
+set notification-fg         "#c9d1d9"
+set notification-error-bg   "#161b22"
+set notification-error-fg   "#ff5555"
+set notification-warning-bg "#161b22"
+set notification-warning-fg "#e3c07b"
+
+set completion-bg           "#161b22"
+set completion-fg           "#6e7681"
+set completion-group-bg     "#0d1117"
+set completion-group-fg     "#39ff5c"
+set completion-highlight-bg "#39ff5c"
+set completion-highlight-fg "#0d1117"
+
+set highlight-color         "#39ff5c"
+set highlight-active-color  "#7cffa0"
+
+set index-fg                "#c9d1d9"
+set index-bg                "#0d1117"
+set index-active-fg         "#0d1117"
+set index-active-bg         "#39ff5c"
+
+# ---- recolor: "modo escuro" do PDF em si (inverte texto/fundo do documento) ----
+# Deixa artigos/slides claros com fundo escuro sem precisar de outro programa.
+set recolor                 true
+set recolor-keephue         false
+set recolor-lightcolor      "#0d1117"
+set recolor-darkcolor       "#c9d1d9"
+set recolor-reverse-video   true
+
+# ---- comportamento ----
+set font                    "JetBrains Mono 10"
+set selection-clipboard     clipboard
+set adjust-open             "best-fit"
+set pages-per-row           1
+set scroll-step              80
+set guioptions               ""     # sem barras extras — só o essencial
+
+# ---- atalhos extras (o resto já é vim-like por padrão) ----
+map <C-r> recolor            # liga/desliga o modo escuro do PDF rapidamente
+map r     reload
+map D     toggle_page_mode

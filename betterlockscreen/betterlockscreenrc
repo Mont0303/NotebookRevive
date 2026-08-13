@@ -1,0 +1,24 @@
+# =========================================================
+# betterlockscreen — tela de bloqueio (Motion Plus Q464B)
+# Usa o mesmo wallpaper.png do resto do tema, com um leve
+# escurecimento (dim) pra destacar o relógio.
+# =========================================================
+
+# cor do texto (relógio, "verifying", "wrong password" etc.)
+text_color=39ff5c
+
+# fonte do relógio/hora
+font="JetBrains Mono"
+
+# formato hora/data
+time_format="%H:%M"
+full_date_format="%A, %d de %B"
+
+# leve blur + dim no wallpaper (sem exagerar, senão o painel de
+# keybindings do wallpaper fica ilegível — só o suficiente pra
+# diferenciar "tela travada" de "tela normal")
+blur_level=1
+dim_level=35
+
+# desliga o "greeter" de usuário duplicado (já usamos sddm/lightdm)
+greeter_supported=false

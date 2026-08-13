@@ -1,0 +1,63 @@
+# =========================================================
+# starship — prompt do terminal (Motion Plus Q464B)
+# Binário único em Rust, custo de performance praticamente
+# zero — ideal pra esse hardware.
+# =========================================================
+
+format = """
+[$username](bold #39ff5c)[@](#6e7681)[$hostname](#6e7681)[:](#6e7681)[$directory](bold #7cffa0)$git_branch$git_status$cmd_duration
+$character"""
+
+# ---- usuário / host (ecoa o "root@q464b:~$" do wallpaper) ----
+[username]
+style_user = "bold #39ff5c"
+style_root = "bold #ff5555"
+format = "[$user]($style)"
+show_always = true
+disabled = false
+
+[hostname]
+format = "[$hostname]($style)"
+style = "#6e7681"
+disabled = false
+# dica: pra bater 100% com o wallpaper, defina o hostname do sistema:
+#   sudo hostnamectl set-hostname q464b
+
+# ---- diretório atual ----
+[directory]
+style = "bold #7cffa0"
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style) "
+
+# ---- git (só aparece dentro de repositórios) ----
+[git_branch]
+style = "#39ff5c"
+format = "[($branch)]($style) "
+
+[git_status]
+style = "#e3c07b"
+format = "[$all_status]($style) "
+
+# ---- avisa quando um comando demorou (útil nesse hardware) ----
+[cmd_duration]
+min_time = 2000
+format = "[took $duration]($style) "
+style = "#e3c07b"
+
+# ---- caractere final do prompt ----
+[character]
+success_symbol = "[>](bold #39ff5c)"
+error_symbol = "[>](bold #ff5555)"
+vimcmd_symbol = "[<](bold #39ff5c)"
+
+# ---- bateria (aparece só quando baixa, pra não poluir) ----
+[battery]
+disabled = false
+format = "[$percentage$symbol]($style) "
+charging_symbol = "[+]"
+discharging_symbol = "[-]"
+
+[[battery.display]]
+threshold = 25
+style = "bold #ff5555"

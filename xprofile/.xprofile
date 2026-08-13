@@ -1,0 +1,11 @@
+# =========================================================
+# ~/.xprofile — variáveis de ambiente lidas no início da sessão
+# gráfica (o lightdm executa isso antes de abrir o i3).
+# Motion Plus Q464B — força modo escuro em apps GTK e Qt.
+# =========================================================
+
+# apps GTK (a maioria do que usamos: Geany, gerenciador de arquivos, etc)
+export GTK_THEME=Adwaita-dark
+
+# apps Qt (qutebrowser) — faz o Qt seguir o tema/paleta do GTK
+export QT_QPA_PLATFORMTHEME=gtk3

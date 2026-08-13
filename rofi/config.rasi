@@ -1,0 +1,69 @@
+/* =========================================================
+ * rofi — launcher minimalista (Motion Plus Q464B)
+ * ========================================================= */
+
+* {
+    bg:      #0d1117;
+    bg-alt:  #161b22;
+    fg:      #c9d1d9;
+    accent:  #39ff5c;
+    muted:   #6e7681;
+
+    background-color: @bg;
+    text-color: @fg;
+    font: "JetBrains Mono 10";
+}
+
+window {
+    width: 500px;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 0px;   /* cantos retos: mais "terminal", menos "app moderno" */
+}
+
+mainbox {
+    padding: 10px;
+    background-color: @bg;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    padding: 8px;
+    border: 0px 0px 2px 0px;
+    border-color: @accent;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+    padding: 0px 6px 0px 0px;
+}
+
+entry {
+    placeholder: "exec >";
+    placeholder-color: @muted;
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    spacing: 2px;
+    scrollbar: false;
+    padding: 6px 0px 0px 0px;
+}
+
+element {
+    padding: 5px 8px;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @accent;
+    border: 0px 0px 0px 2px;
+    border-color: @accent;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}

@@ -1,0 +1,76 @@
+# =========================================================
+# Alacritty — terminal-hacker theme (Motion Plus Q464B)
+# =========================================================
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 10, y = 8 }
+opacity = 0.97          # leve transparência, custo de GPU quase nulo
+decorations = "none"    # sem barra de título — mais espaço útil na tela pequena
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[colors.primary]
+background = "#0d1117"
+foreground = "#c9d1d9"
+
+[colors.cursor]
+text = "#0d1117"
+cursor = "#39ff5c"
+
+[colors.selection]
+text = "#0d1117"
+background = "#39ff5c"
+
+[colors.normal]
+black   = "#0d1117"
+red     = "#ff5555"
+green   = "#5fd7a7"
+yellow  = "#e3c07b"
+blue    = "#5aa5d8"
+magenta = "#b48ead"
+cyan    = "#39ff5c"
+white   = "#c9d1d9"
+
+[colors.bright]
+black   = "#30363d"
+red     = "#ff7b7b"
+green   = "#7fe0bd"
+yellow  = "#f0d19c"
+blue    = "#7dbde8"
+magenta = "#caa9d1"
+cyan    = "#7cffa0"
+white   = "#f0f3f6"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 600
+unfocused_hollow = true    # vira "contorno" quando a janela perde foco — fácil de saber qual terminal está ativo
+
+[bell]
+# flash rápido na cor do tema quando o terminal "toca" (ex: comando terminou, autocomplete sem match)
+# custo de GPU é irrelevante — é só um flash de alguns ms, não uma animação contínua
+animation = "EaseOutExpo"
+duration = 150
+color = "#39ff5c"
+
+[scrolling]
+history = 10000             # scrollback maior — útil pra ver saída de build/compilação sem perder nada
+
+[terminal]
+shell = { program = "/bin/zsh" }   # troque para /bin/bash se preferir

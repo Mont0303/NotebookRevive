@@ -1,0 +1,122 @@
+# =========================================================
+# i3 config — Motion Plus Q464B "terminal-hacker" theme
+# Estilo minimalista, foco em função. Accent: ciano.
+# =========================================================
+
+set $mod Mod4
+font pango:JetBrains Mono 9
+
+# ---------- Cores ----------
+set $bg       #0d1117
+set $bg-alt   #161b22
+set $fg       #c9d1d9
+set $accent   #39ff5c
+set $inactive #30363d
+set $urgent   #ff5555
+
+# class                 border    backgr.  text   indicator  child_border
+client.focused           $accent   $bg      $fg    $accent    $accent
+client.unfocused         $bg-alt   $bg      $inactive $bg-alt $bg-alt
+client.focused_inactive  $bg-alt   $bg      $inactive $bg-alt $bg-alt
+client.urgent            $urgent   $bg      $fg    $urgent    $urgent
+
+# ---------- Aparência das janelas ----------
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders smart
+gaps inner 6
+gaps outer 2
+smart_gaps on
+
+# ---------- Layout de teclado ----------
+exec_always --no-startup-id setxkbmap br
+
+# ---------- Notificações ----------
+exec --no-startup-id dunst
+exec --no-startup-id batsignal -w 20 -c 10 -d 5 -f -i battery -I battery-full
+
+# ---------- Terminal e launcher ----------
+set $term alacritty
+set $menu rofi -show drun -theme ~/.config/rofi/config.rasi
+
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+m exec $term -e cmus
+bindsym $mod+a exec $term -e aichat
+bindsym $mod+o exec qutebrowser
+bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+Shift+b exec $term -e bluetuith
+bindsym $mod+Shift+q kill
+
+# ---------- Navegação (estilo vim: h j k l) ----------
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split e layout
+bindsym $mod+v split v
+bindsym $mod+b split h
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# ---------- Workspaces (nomeados: mais fácil de identificar) ----------
+set $ws1 "1:term"
+set $ws2 "2:code"
+set $ws3 "3:web"
+set $ws4 "4:docs"
+set $ws5 "5:misc"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# ---------- Recarregar / sair ----------
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Escape exec ~/.config/i3/scripts/powermenu.sh
+
+# ---------- Resize mode ----------
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# ---------- Brilho e volume (teclas de função, com aviso visual via dunst) ----------
+bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness-up.sh
+bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness-down.sh
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volume-up.sh
+bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volume-down.sh
+bindsym XF86AudioMute exec ~/.config/i3/scripts/volume-mute.sh
+
+# ---------- Wallpaper (praticamente sólido, quase sem custo de CPU) ----------
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.png
+
+# ---------- Barra de status ----------
+# Usamos polybar no lugar da i3bar padrão — evita rodar duas barras.
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# lockscreen com wallpaper temático (betterlockscreen)
+bindsym $mod+Shift+x exec betterlockscreen -l dim

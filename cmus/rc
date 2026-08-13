@@ -1,0 +1,59 @@
+# =========================================================
+# cmus — player de música em terminal (Motion Plus Q464B theme)
+# Leve o suficiente pra tocar em paralelo sem pesar no 4GB de RAM.
+# =========================================================
+
+# ---- pasta padrão da biblioteca ----
+# ajuste pro caminho onde você guarda seus mp3s
+set library_dir = ~/Music
+
+# ---- cores (tema verde sobre preto) ----
+# cmus recentes suportam hex; se sua versão não suportar,
+# troque os hex por índices 0-255 do terminal (ex: 0, 15, 46).
+color win_bg               #0d1117
+color win_fg                #c9d1d9
+
+color win_cur_bg            #161b22
+color win_cur_fg            #39ff5c
+
+color win_cur_sel_bg        #39ff5c
+color win_cur_sel_fg        #0d1117
+
+color win_sel_bg            #161b22
+color win_sel_fg            #7cffa0
+
+color win_title_bg          #0d1117
+color win_title_fg          #39ff5c
+
+color win_status_bg         #161b22
+color win_status_fg         #39ff5c
+
+color win_inactive_status_bg #0d1117
+color win_inactive_status_fg #6e7681
+
+color cmdline_bg            #0d1117
+color cmdline_fg            #39ff5c
+
+color statusline_bg         #161b22
+color statusline_fg         #39ff5c
+
+color titleline_bg          #0d1117
+color titleline_fg          #39ff5c
+
+color error_bg              #161b22
+color error_fg              #ff5555
+
+color info_bg               #161b22
+color info_fg               #e3c07b
+
+# ---- comportamento ----
+set show_current_bitrate    = true
+set show_remaining_time     = true
+set repeat                  = true
+set shuffle                 = false
+set play_library            = true
+set softvol                 = true
+
+# volume inicial mais conservador (caixinha de netbook costuma distorcer no talo)
+set vol_left  = 70
+set vol_right = 70

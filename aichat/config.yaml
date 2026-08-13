@@ -1,0 +1,41 @@
+# =========================================================
+# aichat — cliente de IA em terminal (Motion Plus Q464B)
+# Funciona com qualquer provedor que tenha API — inclusive
+# camadas gratuitas (Gemini, Groq). Veja o README pra pegar
+# uma chave grátis.
+# =========================================================
+
+# ---- modelo padrão ----
+# troque "gemini" pelo provedor que você configurar
+# (opções comuns: gemini, groq, openai, claude)
+# gemini-1.5-flash foi descontinuado pelo Google — usando o
+# modelo atual mais leve/rápido da família 3.x (ago/2026)
+model: gemini:gemini-3.5-flash-lite
+
+clients:
+  - type: gemini
+    api_key: SUA_CHAVE_AQUI
+
+  - type: groq
+    api_key: SUA_CHAVE_AQUI
+
+# ---- comportamento ----
+stream: true
+save: true
+highlight: true
+
+# ---- aparência (tema verde sobre preto, combinando com o resto) ----
+# aichat usa temas no formato .tmTheme; deixamos "dark" nativo,
+# que já combina bem com o terminal Alacritty (fundo #0d1117).
+light_theme: false
+
+# ---- prompt padrão (opcional) ----
+# deixa as respostas mais objetivas, bom pra estudar rápido entre aulas
+role: default
+
+roles:
+  - name: default
+    prompt: >
+      Responda de forma direta e objetiva, em português, como se estivesse
+      ajudando um estudante de engenharia de software com pouco tempo
+      entre uma aula e outra.

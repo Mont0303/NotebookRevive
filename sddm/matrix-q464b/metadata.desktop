@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=Matrix Q464B
+Description=Tema minimalista verde sobre preto, combinando com i3/lockscreen
+Author=you
+Copyright=(c) 2026
+License=MIT
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+Font=JetBrains Mono
+FontSize=10
