@@ -66,7 +66,7 @@ fi
 echo -e "${CYAN}[3/5] Aplicando permissões de execução aos scripts...${NC}"
 chmod +x ~/.config/i3/scripts/*.sh
 chmod +x ~/.config/polybar/launch.sh
-chmod +x atualizador.sh
+chmod +x atualizador.sh faxina-sistema.sh
 
 echo -e "${CYAN}[4/5] Atualizando tela de login (LightDM) e bloqueio (Betterlockscreen)...${NC}"
 # Atualiza LightDM no sistema

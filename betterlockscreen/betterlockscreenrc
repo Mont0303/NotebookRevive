@@ -1,13 +1,19 @@
 # =========================================================
-# betterlockscreen — Bloqueio Funcional (Cyberdeck Q464B)
+# betterlockscreen — Bloqueio Funcional & Nítido (Cyberdeck Q464B)
 # =========================================================
 
+# Cor do texto em âmbar tático
 text_color=ff9e3b
-font="JetBrains Mono"
-time_format="%H:%M:%S"
-full_date_format="%A, %d/%m/%Y"
 
-blur_level=1
+# Fonte limpa
+font="JetBrains Mono"
+
+# Formatação limpa de hora e data
+time_format="%H:%M"
+full_date_format="%A, %d de %B"
+
+# Sem blur (evita borrão pixelado e acelera em 10x no Atom)
+blur_level=0
 dim_level=30
 
 greeter_supported=false

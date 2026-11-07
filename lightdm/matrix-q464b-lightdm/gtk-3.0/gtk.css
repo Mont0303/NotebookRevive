@@ -1,89 +1,102 @@
 /* =========================================================
- * lightdm — MIL-SPEC Tactical Amber Theme (Cyberdeck Q464B)
+ * LightDM GTK Greeter — Tactical Theme (Cyberdeck Q464B)
+ * Design limpo, sem bordas duplicadas ou distorções.
  * ========================================================= */
 
-@define-color accent #ff9e3b;
-@define-color bg #0d0e11;
-@define-color panelbg #14161d;
-@define-color fg #e6dfd3;
-@define-color dim #70624e;
-@define-color border #a88144;
+@define-color bg_color #0a0b0e;
+@define-color panel_bg #14161d;
+@define-color border_color #ff9e3b;
+@define-color text_color #e6dfd3;
+@define-color text_muted #70624e;
+@define-color accent_color #ff9e3b;
 
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10pt;
+}
+
+/* Fundo da tela de login */
 window {
     background-color: transparent;
-    color: @fg;
-    font-family: "JetBrains Mono";
+    color: @text_color;
 }
 
-/* Painel superior militar */
+/* Barra superior com relógio e botões de energia */
 #panel_window,
-GdmSessionOptionWidget,
 .lightdm-gtk-greeter-panel {
-    background-color: @panelbg;
-    color: @accent;
-    border-bottom: 2px solid @border;
+    background-color: @panel_bg;
+    color: @accent_color;
+    border-bottom: 2px solid @border_color;
+    font-weight: bold;
+    padding: 2px 8px;
 }
 
-/* Caixa central de login com cantos retos mil-spec */
-GtkEventBox,
-.login-window {
-    background-color: @panelbg;
-    border: 3px solid @accent;
+/* Caixa central de login */
+#login_window {
+    background-color: @panel_bg;
+    border: 2px solid @border_color;
     border-radius: 0px;
-    padding: 16px;
+    padding: 24px;
+    box-shadow: none;
 }
 
+/* Rótulos e textos */
 label {
-    color: @fg;
+    color: @text_color;
     font-family: "JetBrains Mono";
 }
 
+/* Campo de entrada de senha */
 entry {
-    background-color: @bg;
-    color: @accent;
-    border: 2px solid @border;
+    background-color: @bg_color;
+    color: @accent_color;
+    border: 1px solid @text_muted;
     border-radius: 0px;
-    padding: 8px 10px;
+    padding: 8px 12px;
     font-family: "JetBrains Mono";
-    caret-color: @accent;
+    caret-color: @accent_color;
+    box-shadow: none;
 }
 
 entry:focus {
-    border-color: @accent;
-    box-shadow: 0 0 6px @accent;
+    border-color: @accent_color;
 }
 
+/* Botão de login / Entrar */
 button {
-    background-color: @bg;
-    color: @accent;
-    border: 2px solid @accent;
+    background-color: @bg_color;
+    color: @accent_color;
+    border: 1px solid @border_color;
     border-radius: 0px;
     font-family: "JetBrains Mono";
-    padding: 6px 14px;
+    padding: 6px 16px;
     font-weight: bold;
+    box-shadow: none;
 }
 
 button:hover {
-    background-color: @accent;
-    color: @bg;
+    background-color: @accent_color;
+    color: @bg_color;
 }
 
+/* Seletores de sessão e opções */
 combobox,
 combobox button {
-    background-color: @bg;
-    color: @fg;
-    border: 1px solid @border;
+    background-color: @bg_color;
+    color: @text_color;
+    border: 1px solid @text_muted;
     border-radius: 0px;
+    box-shadow: none;
 }
 
 menu, .menu {
-    background-color: @panelbg;
-    color: @fg;
-    border: 2px solid @border;
+    background-color: @panel_bg;
+    color: @text_color;
+    border: 1px solid @border_color;
     border-radius: 0px;
 }
 
 menuitem:hover {
-    background-color: @accent;
-    color: @bg;
+    background-color: @accent_color;
+    color: @bg_color;
 }
