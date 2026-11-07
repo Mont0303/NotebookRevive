@@ -1,24 +1,25 @@
 # =========================================================
-# i3 config — Motion Plus Q464B "terminal-hacker" theme
-# Estilo minimalista, foco em função. Accent: ciano.
+# i3 config — Tactical Amber Cyberdeck (Motion Plus Q464B)
+# Estilo militar / rádio hacker / HUD tático para Cybersec
 # =========================================================
 
 set $mod Mod4
 font pango:JetBrains Mono 9
 
-# ---------- Cores ----------
-set $bg       #0d1117
-set $bg-alt   #161b22
-set $fg       #c9d1d9
-set $accent   #39ff5c
-set $inactive #30363d
-set $urgent   #ff5555
+# ---------- Cores: Tactical Amber ----------
+set $bg       #0d0e11
+set $bg-alt   #16171d
+set $fg       #e6dfd3
+set $accent   #ff9e3b
+set $dim      #c49e68
+set $inactive #3d352a
+set $urgent   #ff4d4d
 
-# class                 border    backgr.  text   indicator  child_border
-client.focused           $accent   $bg      $fg    $accent    $accent
+# class                 border    backgr.  text    indicator child_border
+client.focused           $accent   $bg      $accent $accent   $accent
 client.unfocused         $bg-alt   $bg      $inactive $bg-alt $bg-alt
 client.focused_inactive  $bg-alt   $bg      $inactive $bg-alt $bg-alt
-client.urgent            $urgent   $bg      $fg    $urgent    $urgent
+client.urgent            $urgent   $bg      $fg     $urgent   $urgent
 
 # ---------- Aparência das janelas ----------
 default_border pixel 2
@@ -50,6 +51,12 @@ bindsym $mod+y exec bash -c 'mpv "$(xclip -o -selection clipboard)"'
 bindsym $mod+Shift+b exec $term -e bluetuith
 bindsym $mod+Shift+q kill
 
+# ---------- Scratchpad Tático (Terminal Pop-up de Notas/IPs) ----------
+# Pressione Super+U para mostrar/esconder o terminal de notas flutuante
+# Pressione Super+Shift+U para iniciar uma nova sessão do scratchpad
+bindsym $mod+u [instance="tactical_scratchpad"] scratchpad show
+bindsym $mod+Shift+u exec alacritty --class tactical_scratchpad,tactical_scratchpad
+
 # ---------- Navegação (estilo vim: h j k l) ----------
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -71,12 +78,12 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-# ---------- Workspaces (nomeados: mais fácil de identificar) ----------
-set $ws1 "1:term"
-set $ws2 "2:code"
-set $ws3 "3:web"
-set $ws4 "4:docs"
-set $ws5 "5:misc"
+# ---------- Workspaces Táticos para Cybersec ----------
+set $ws1 "1:SYS"
+set $ws2 "2:RECON"
+set $ws3 "3:WEB"
+set $ws4 "4:EXPLOIT"
+set $ws5 "5:LAB"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -90,7 +97,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 
-# ---------- Recarregar / sair ----------
+# ---------- Recarregar / menu de energia ----------
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Escape exec ~/.config/i3/scripts/powermenu.sh
@@ -106,24 +113,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ---------- Brilho e volume (teclas de função, com aviso visual via dunst) ----------
+# ---------- Brilho e volume ----------
 bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness-up.sh
 bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness-down.sh
 bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volume-up.sh
 bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volume-down.sh
 bindsym XF86AudioMute exec ~/.config/i3/scripts/volume-mute.sh
 
-# ---------- Wallpaper (praticamente sólido, quase sem custo de CPU) ----------
+# ---------- Wallpaper e Barra ----------
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.png
-
-# ---------- Barra de status ----------
-# Usamos polybar no lugar da i3bar padrão — evita rodar duas barras.
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# lockscreen com wallpaper temático (betterlockscreen)
+# Lockscreen
 bindsym $mod+Shift+x exec betterlockscreen -l dim
 
 # ---------- Regras de janelas ----------
-for_window [class="mpv"] floating enable
-for_window [class="mpv"] resize set 960 540
-for_window [class="mpv"] move position center
+for_window [class="mpv"] floating enable, resize set 960 540, move position center
+for_window [instance="tactical_scratchpad"] floating enable, resize set 860 480, move position center, move scratchpad

@@ -1,13 +1,13 @@
 /* =========================================================
- * rofi — launcher minimalista (Motion Plus Q464B)
+ * rofi — Tactical Amber HUD Launcher (Motion Plus Q464B)
  * ========================================================= */
 
 * {
-    bg:      #0d1117;
-    bg-alt:  #161b22;
-    fg:      #c9d1d9;
-    accent:  #39ff5c;
-    muted:   #6e7681;
+    bg:      #0d0e11;
+    bg-alt:  #16171d;
+    fg:      #e6dfd3;
+    accent:  #ff9e3b;
+    muted:   #70624e;
 
     background-color: @bg;
     text-color: @fg;
@@ -15,10 +15,10 @@
 }
 
 window {
-    width: 500px;
+    width: 520px;
     border: 2px;
     border-color: @accent;
-    border-radius: 0px;   /* cantos retos: mais "terminal", menos "app moderno" */
+    border-radius: 0px;
 }
 
 mainbox {
@@ -40,7 +40,7 @@ prompt {
 }
 
 entry {
-    placeholder: "exec >";
+    placeholder: "tactical-exec >";
     placeholder-color: @muted;
     text-color: @fg;
 }

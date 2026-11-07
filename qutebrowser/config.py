@@ -1,55 +1,55 @@
 # =========================================================
-# qutebrowser — navegador leve, por teclado (Motion Plus Q464B)
+# qutebrowser — Tactical Amber HUD (Motion Plus Q464B)
 # =========================================================
 
 config.load_autoconfig(False)
 
-# ---- performance: hardware fraco, então corta gordura ----
-c.content.javascript.enabled = True          # necessário pra maioria dos sites da faculdade (AVA, Google, etc)
-c.content.autoplay = False                   # nada de video/audio tocando sozinho comendo CPU
+# ---- performance: hardware fraco, corta gordura ----
+c.content.javascript.enabled = True
+c.content.autoplay = False
 c.content.images = True
-c.content.pdfjs = False                      # abre PDF no zathura em vez do viewer interno
+c.content.pdfjs = False
 c.content.notifications.enabled = False
-c.tabs.show = "multiple"                     # some a barra de abas quando só tem 1 aberta
-c.statusbar.show = "in-mode"                 # status bar só aparece quando precisa (modo comando etc)
-c.scrolling.smooth = False                   # scroll suave custa CPU à toa nesse hardware
+c.tabs.show = "multiple"
+c.statusbar.show = "in-mode"
+c.scrolling.smooth = False
 
 # ---- fonte ----
 c.fonts.default_family = "JetBrains Mono"
 c.fonts.default_size = "10pt"
 
-# ---- tema (mesma paleta do resto: fundo #0d1117, accent #39ff5c) ----
-c.colors.webpage.darkmode.enabled = True     # força modo escuro em sites que não tem um nativo
+# ---- tema: Tactical Amber (#0d0e11 / #ff9e3b) ----
+c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = "lightness-cielab"
 
-c.colors.completion.fg = "#c9d1d9"
-c.colors.completion.odd.bg = "#0d1117"
-c.colors.completion.even.bg = "#0d1117"
-c.colors.completion.category.fg = "#39ff5c"
-c.colors.completion.category.bg = "#161b22"
-c.colors.completion.item.selected.fg = "#0d1117"
-c.colors.completion.item.selected.bg = "#39ff5c"
-c.colors.completion.scrollbar.fg = "#39ff5c"
-c.colors.completion.scrollbar.bg = "#0d1117"
+c.colors.completion.fg = "#e6dfd3"
+c.colors.completion.odd.bg = "#0d0e11"
+c.colors.completion.even.bg = "#0d0e11"
+c.colors.completion.category.fg = "#ff9e3b"
+c.colors.completion.category.bg = "#16171d"
+c.colors.completion.item.selected.fg = "#0d0e11"
+c.colors.completion.item.selected.bg = "#ff9e3b"
+c.colors.completion.scrollbar.fg = "#ff9e3b"
+c.colors.completion.scrollbar.bg = "#0d0e11"
 
-c.colors.statusbar.normal.fg = "#c9d1d9"
-c.colors.statusbar.normal.bg = "#0d1117"
-c.colors.statusbar.insert.fg = "#0d1117"
-c.colors.statusbar.insert.bg = "#39ff5c"
-c.colors.statusbar.command.fg = "#39ff5c"
-c.colors.statusbar.command.bg = "#0d1117"
-c.colors.statusbar.url.fg = "#c9d1d9"
-c.colors.statusbar.url.success.https.fg = "#39ff5c"
+c.colors.statusbar.normal.fg = "#e6dfd3"
+c.colors.statusbar.normal.bg = "#0d0e11"
+c.colors.statusbar.insert.fg = "#0d0e11"
+c.colors.statusbar.insert.bg = "#ff9e3b"
+c.colors.statusbar.command.fg = "#ff9e3b"
+c.colors.statusbar.command.bg = "#0d0e11"
+c.colors.statusbar.url.fg = "#e6dfd3"
+c.colors.statusbar.url.success.https.fg = "#ff9e3b"
 
-c.colors.tabs.bar.bg = "#0d1117"
-c.colors.tabs.odd.fg = "#6e7681"
-c.colors.tabs.odd.bg = "#0d1117"
-c.colors.tabs.even.fg = "#6e7681"
-c.colors.tabs.even.bg = "#0d1117"
-c.colors.tabs.selected.odd.fg = "#0d1117"
-c.colors.tabs.selected.odd.bg = "#39ff5c"
-c.colors.tabs.selected.even.fg = "#0d1117"
-c.colors.tabs.selected.even.bg = "#39ff5c"
+c.colors.tabs.bar.bg = "#0d0e11"
+c.colors.tabs.odd.fg = "#70624e"
+c.colors.tabs.odd.bg = "#0d0e11"
+c.colors.tabs.even.fg = "#70624e"
+c.colors.tabs.even.bg = "#0d0e11"
+c.colors.tabs.selected.odd.fg = "#0d0e11"
+c.colors.tabs.selected.odd.bg = "#ff9e3b"
+c.colors.tabs.selected.even.fg = "#0d0e11"
+c.colors.tabs.selected.even.bg = "#ff9e3b"
 
 # ---- página inicial e busca ----
 c.url.default_page = "https://start.duckduckgo.com"
@@ -57,12 +57,5 @@ c.url.start_pages = ["https://start.duckduckgo.com"]
 c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
 
 # ---- integração com MPV (tocar vídeos com aceleração de hardware) ----
-# Pressione ',m' para tocar o vídeo da página atual no MPV
-# Pressione ',M' para escolher um link de vídeo com hint e abrir no MPV
 config.bind(',m', 'spawn mpv {url}')
 config.bind(',M', 'hint links spawn mpv {hint-url}')
-
-# O resto dos atalhos já vem por padrão, estilo vim: hjkl pra navegar,
-# o/O pra abrir URL, d pra fechar aba, u pra reabrir, gg/G pro topo/fim
-# da página, / pra buscar no texto. Não precisa remapear nada disso.
-

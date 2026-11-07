@@ -1,8 +1,8 @@
-# Setup — Motion Plus Q464B "terminal-hacker" (Arch + i3)
+# Setup — Motion Plus Q464B Tactical Amber (Arch + i3 Cyberdeck)
 
-Tema minimalista, foco em ficar leve e funcional no hardware fraco
-(Atom x5-Z8350, 4GB RAM). Accent color: verde estilo Matrix (`#39ff5c`), fundo quase
-preto (`#0d1117`), fonte `JetBrains Mono`.
+Tema militar / rádio hacker / HUD tático para cibersegurança e hardware de campo
+(Atom x5-Z8350, 4GB RAM). Accent color: Âmbar Tático (`#ff9e3b`), fundo grafite
+fosco (`#0d0e11`), fonte `JetBrains Mono`.
 
 **Instalando do zero?** Veja primeiro o `PREREQUISITOS.md` — cobre a
 instalação base do Arch e todos os pacotes necessários antes destes

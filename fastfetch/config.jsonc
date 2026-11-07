@@ -1,7 +1,5 @@
 // =========================================================
-// fastfetch — Motion Plus Q464B "terminal-hacker" theme
-// (fastfetch é o sucessor mantido do neofetho, mais rápido —
-// vale mais a pena que instalar o neofetch, que está arquivado)
+// fastfetch — Tactical Amber Cyberdeck (Motion Plus Q464B)
 // =========================================================
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
@@ -9,7 +7,7 @@
         "type": "data",
         "source": "~/.config/fastfetch/logo.txt",
         "color": {
-            "1": "green"
+            "1": "yellow"
         },
         "padding": {
             "top": 1,
@@ -19,7 +17,7 @@
     "display": {
         "separator": " ",
         "color": {
-            "keys": "green"
+            "keys": "yellow"
         }
     },
     "modules": [

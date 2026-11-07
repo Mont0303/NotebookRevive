@@ -1,63 +1,49 @@
 # =========================================================
-# starship — prompt do terminal (Motion Plus Q464B)
-# Binário único em Rust, custo de performance praticamente
-# zero — ideal pra esse hardware.
+# starship — Tactical Amber Prompt (Cyberdeck Q464B)
 # =========================================================
 
 format = """
-[$username](bold #39ff5c)[@](#6e7681)[$hostname](#6e7681)[:](#6e7681)[$directory](bold #7cffa0)$git_branch$git_status$cmd_duration
+[$username](bold #ff9e3b)[@](#70624e)[$hostname](#c49e68)[:](#70624e)[$directory](bold #ffb454)$git_branch$git_status$cmd_duration
 $character"""
 
-# ---- usuário / host (ecoa o "root@q464b:~$" do wallpaper) ----
 [username]
-style_user = "bold #39ff5c"
-style_root = "bold #ff5555"
+style_user = "bold #ff9e3b"
+style_root = "bold #ff4d4d"
 format = "[$user]($style)"
 show_always = true
 disabled = false
 
 [hostname]
 format = "[$hostname]($style)"
-style = "#6e7681"
+style = "#c49e68"
 disabled = false
-# dica: pra bater 100% com o wallpaper, defina o hostname do sistema:
-#   sudo hostnamectl set-hostname q464b
 
-# ---- diretório atual ----
 [directory]
-style = "bold #7cffa0"
+style = "bold #ffb454"
 truncation_length = 3
 truncate_to_repo = true
 format = "[$path]($style) "
 
-# ---- git (só aparece dentro de repositórios) ----
 [git_branch]
-style = "#39ff5c"
+style = "#ff9e3b"
 format = "[($branch)]($style) "
 
 [git_status]
-style = "#e3c07b"
+style = "#c49e68"
 format = "[$all_status]($style) "
 
-# ---- avisa quando um comando demorou (útil nesse hardware) ----
 [cmd_duration]
 min_time = 2000
 format = "[took $duration]($style) "
-style = "#e3c07b"
+style = "#c49e68"
 
-# ---- caractere final do prompt ----
 [character]
-success_symbol = "[>](bold #39ff5c)"
-error_symbol = "[>](bold #ff5555)"
-vimcmd_symbol = "[<](bold #39ff5c)"
+success_symbol = "[>](bold #ff9e3b)"
+error_symbol = "[!](bold #ff4d4d)"
+vimcmd_symbol = "[<](bold #ff9e3b)"
 
-# ---- bateria (aparece só quando baixa, pra não poluir) ----
 [battery]
 disabled = false
 format = "[$percentage$symbol]($style) "
 charging_symbol = "[+]"
 discharging_symbol = "[-]"
-
-[[battery.display]]
-threshold = 25
-style = "bold #ff5555"

@@ -1,5 +1,5 @@
 # =========================================================
-# Alacritty — terminal-hacker theme (Motion Plus Q464B)
+# Alacritty — Tactical Amber HUD (Motion Plus Q464B Cyberdeck)
 # =========================================================
 
 [env]
@@ -7,8 +7,8 @@ TERM = "xterm-256color"
 
 [window]
 padding = { x = 10, y = 8 }
-opacity = 0.97          # leve transparência, custo de GPU quase nulo
-decorations = "none"    # sem barra de título — mais espaço útil na tela pequena
+opacity = 0.98
+decorations = "none"
 
 [font]
 size = 10.0
@@ -25,52 +25,48 @@ style = "Bold"
 family = "JetBrains Mono"
 style = "Italic"
 
+# ---- Paleta Tactical Amber ----
 [colors.primary]
-background = "#0d1117"
-foreground = "#c9d1d9"
+background = "#0d0e11"
+foreground = "#e6dfd3"
 
 [colors.cursor]
-text = "#0d1117"
-cursor = "#39ff5c"
+text = "#0d0e11"
+cursor = "#ff9e3b"
 
 [colors.selection]
-text = "#0d1117"
-background = "#39ff5c"
+text = "#0d0e11"
+background = "#ff9e3b"
 
 [colors.normal]
-black   = "#0d1117"
-red     = "#ff5555"
-green   = "#5fd7a7"
-yellow  = "#e3c07b"
-blue    = "#5aa5d8"
+black   = "#14151a"
+red     = "#ff4d4d"
+green   = "#73b06f"
+yellow  = "#ff9e3b"
+blue    = "#56949f"
 magenta = "#b48ead"
-cyan    = "#39ff5c"
-white   = "#c9d1d9"
+cyan    = "#88c0d0"
+white   = "#e6dfd3"
 
 [colors.bright]
-black   = "#30363d"
-red     = "#ff7b7b"
-green   = "#7fe0bd"
-yellow  = "#f0d19c"
-blue    = "#7dbde8"
+black   = "#3d352a"
+red     = "#ff6e6e"
+green   = "#98d694"
+yellow  = "#ffb454"
+blue    = "#76b4bf"
 magenta = "#caa9d1"
-cyan    = "#7cffa0"
-white   = "#f0f3f6"
+cyan    = "#a3dbe8"
+white   = "#f6f2ec"
 
 [cursor]
 style = { shape = "Block", blinking = "On" }
 blink_interval = 600
-unfocused_hollow = true    # vira "contorno" quando a janela perde foco — fácil de saber qual terminal está ativo
+unfocused_hollow = true
 
 [bell]
-# flash rápido na cor do tema quando o terminal "toca" (ex: comando terminou, autocomplete sem match)
-# custo de GPU é irrelevante — é só um flash de alguns ms, não uma animação contínua
 animation = "EaseOutExpo"
 duration = 150
-color = "#39ff5c"
+color = "#ff9e3b"
 
 [scrolling]
-history = 10000             # scrollback maior — útil pra ver saída de build/compilação sem perder nada
-
-[terminal]
-shell = { program = "/bin/zsh" }   # troque para /bin/bash se preferir
+history = 10000

@@ -1,12 +1,12 @@
 # =========================================================
-# dunst — notificações (Motion Plus Q464B)
+# dunst — Tactical Amber Notificações (Cyberdeck Q464B)
 # =========================================================
 
 [global]
     monitor = 0
     follow = mouse
 
-    width = 300
+    width = 320
     height = 300
     origin = top-right
     offset = 14x14
@@ -14,19 +14,19 @@
 
     notification_limit = 4
     progress_bar = true
-    progress_bar_height = 10
+    progress_bar_height = 8
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
-    progress_bar_max_width = 280
+    progress_bar_max_width = 300
 
     indicate_hidden = yes
-    transparency = 5
+    transparency = 0
     separator_height = 2
-    padding = 12
+    padding = 10
     horizontal_padding = 12
     text_icon_padding = 8
     frame_width = 2
-    frame_color = "#39ff5c"
+    frame_color = "#ff9e3b"
     separator_color = frame
     sort = yes
 
@@ -56,7 +56,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 6
+    corner_radius = 0
     ignore_dbusclose = false
 
     mouse_left_click = close_current
@@ -67,27 +67,26 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#0d1117"
-    foreground = "#c9d1d9"
-    frame_color = "#6e7681"
+    background = "#0d0e11"
+    foreground = "#e6dfd3"
+    frame_color = "#70624e"
     timeout = 5
 
 [urgency_normal]
-    background = "#0d1117"
-    foreground = "#c9d1d9"
-    frame_color = "#39ff5c"
+    background = "#0d0e11"
+    foreground = "#e6dfd3"
+    frame_color = "#ff9e3b"
     timeout = 8
 
 [urgency_critical]
-    background = "#0d1117"
-    foreground = "#ff5555"
-    frame_color = "#ff5555"
+    background = "#0d0e11"
+    foreground = "#ff4d4d"
+    frame_color = "#ff4d4d"
     timeout = 0
 
-# ---- exemplo: destaque especial pra avisos de bateria baixa ----
 [battery_low]
     appname = "*battery*"
-    background = "#0d1117"
-    foreground = "#ff5555"
-    frame_color = "#ff5555"
+    background = "#0d0e11"
+    foreground = "#ff4d4d"
+    frame_color = "#ff4d4d"
     timeout = 10
