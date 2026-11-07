@@ -56,6 +56,13 @@ c.url.default_page = "https://start.duckduckgo.com"
 c.url.start_pages = ["https://start.duckduckgo.com"]
 c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
 
+# ---- integração com MPV (tocar vídeos com aceleração de hardware) ----
+# Pressione ',m' para tocar o vídeo da página atual no MPV
+# Pressione ',M' para escolher um link de vídeo com hint e abrir no MPV
+config.bind(',m', 'spawn mpv {url}')
+config.bind(',M', 'hint links spawn mpv {hint-url}')
+
 # O resto dos atalhos já vem por padrão, estilo vim: hjkl pra navegar,
 # o/O pra abrir URL, d pra fechar aba, u pra reabrir, gg/G pro topo/fim
 # da página, / pra buscar no texto. Não precisa remapear nada disso.
+

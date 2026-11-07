@@ -565,6 +565,28 @@ porque ele usa um mecanismo de tema próprio (nem todo app respeita
 GTK/Qt) — nesse caso me fala qual app que a gente vê a configuração
 específica dele.
 
+## 22. Aceleração de Vídeo (VA-API) & Cyberdeck Toolkit
+
+O Atom x5-Z8350 **não tem força de CPU para decodificar vídeos modernos (VP9/AV1) por software**. Por isso vídeos no navegador engasgam. Para resolver isso:
+
+1. **Instale os pacotes de aceleração e ferramentas**:
+```bash
+sudo pacman -S libva-intel-driver libva-utils mesa mpv yt-dlp xclip picocom nmap btop
+```
+*(ou simplesmente rode `./atualizador.sh --deps`)*
+
+2. **Como tocar vídeos a 1080p lisos (sem esquentar a CPU)**:
+- **No terminal**: copie o link do YouTube e aperte `Super+Y` (ou rode `mpv "URL"`). O config do `mpv.conf` força a seleção de streams em **H.264 (AVC)** e usa decodificação via GPU (`vaapi`).
+- **No qutebrowser**: ao abrir uma página com vídeo, pressione `,m` para tocar a página direto no MPV, ou `,M` para escolher um link com as hints do teclado.
+
+3. **Menu de Campo do Cyberdeck (`Super+X`)**:
+Abre um menu rápido com utilitários de campo:
+- **🌡 Monitor Térmico e Cooler**: Mostra em tempo real a temperatura de cada zona e a frequência dos 4 núcleos da CPU (ideal para validar a ventoinha adaptada).
+- **📡 Escanear Redes Wi-Fi**: Lista redes e intensidade de sinal via `nmcli`.
+- **🔌 Conectar Console Serial USB**: Detecta adaptadores USB-UART (`/dev/ttyUSB*` ou `/dev/ttyACM*`) e conecta via `picocom` a 115200 baud.
+- **🔍 Varredura de Rede (Nmap)**: Descobre hosts ativos na sub-rede conectada.
+- **⚡ Monitor de Sistema**: Abre o `btop` / `htop`.
+
 ## Próximos passos possíveis
 - ~~Zathura (leitor de PDF) com tema combinando~~ ✅ feito
 - ~~neofetch/fastfetch customizado no terminal ao abrir~~ ✅ feito
@@ -581,4 +603,7 @@ específica dele.
 - ~~wifi e bluetooth (menus rápidos)~~ ✅ feito
 - ~~Git/backup dos dotfiles~~ ✅ feito
 - ~~modo escuro em todo o sistema (GTK + Qt)~~ ✅ feito
+- ~~Aceleração de vídeo por hardware (VA-API) + MPV~~ ✅ feito
+- ~~Cyberdeck Field Toolkit (Monitor térmico, Serial, Nmap)~~ ✅ feito
 - Skins/adesivos físicos
+

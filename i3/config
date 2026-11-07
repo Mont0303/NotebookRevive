@@ -45,6 +45,8 @@ bindsym $mod+m exec $term -e cmus
 bindsym $mod+a exec $term -e aichat
 bindsym $mod+o exec qutebrowser
 bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+x exec ~/.config/i3/scripts/cyberdeck-menu.sh
+bindsym $mod+y exec bash -c 'mpv "$(xclip -o -selection clipboard)"'
 bindsym $mod+Shift+b exec $term -e bluetuith
 bindsym $mod+Shift+q kill
 
@@ -120,3 +122,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # lockscreen com wallpaper temático (betterlockscreen)
 bindsym $mod+Shift+x exec betterlockscreen -l dim
+
+# ---------- Regras de janelas ----------
+for_window [class="mpv"] floating enable
+for_window [class="mpv"] resize set 960 540
+for_window [class="mpv"] move position center

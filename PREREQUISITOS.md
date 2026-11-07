@@ -72,6 +72,8 @@ sudo pacman -S --needed \
     zathura zathura-pdf-mupdf \
     cmus ffmpeg \
     qutebrowser \
+    libva-intel-driver libva-utils mesa mpv yt-dlp xclip \
+    picocom nmap btop \
     geany \
     starship \
     dunst \
