@@ -1,15 +1,13 @@
 /* =========================================================
- * matrix-q464b-lightdm — tema GTK3 pro lightdm-gtk-greeter
- * Seletores genéricos (não dependem de IDs específicos do
- * greeter), então funcionam mesmo se a versão do widget
- * mudar um pouco entre distros/versões.
+ * lightdm — MIL-SPEC Tactical Amber Theme (Cyberdeck Q464B)
  * ========================================================= */
 
-@define-color accent #39ff5c;
-@define-color bg #0d1117;
-@define-color panelbg #04120c;
-@define-color fg #c9d1d9;
-@define-color dim #6e7681;
+@define-color accent #ff9e3b;
+@define-color bg #0d0e11;
+@define-color panelbg #14161d;
+@define-color fg #e6dfd3;
+@define-color dim #70624e;
+@define-color border #a88144;
 
 window {
     background-color: transparent;
@@ -17,21 +15,22 @@ window {
     font-family: "JetBrains Mono";
 }
 
-/* painel superior (relógio, indicador de sessão/energia) */
+/* Painel superior militar */
 #panel_window,
 GdmSessionOptionWidget,
 .lightdm-gtk-greeter-panel {
     background-color: @panelbg;
     color: @accent;
-    border-bottom: 2px solid @accent;
+    border-bottom: 2px solid @border;
 }
 
-/* caixa central de login */
+/* Caixa central de login com cantos retos mil-spec */
 GtkEventBox,
 .login-window {
     background-color: @panelbg;
-    border: 2px solid @accent;
-    border-radius: 6px;
+    border: 3px solid @accent;
+    border-radius: 0px;
+    padding: 16px;
 }
 
 label {
@@ -42,47 +41,49 @@ label {
 entry {
     background-color: @bg;
     color: @accent;
-    border: 1px solid @accent;
-    border-radius: 3px;
-    padding: 6px 8px;
+    border: 2px solid @border;
+    border-radius: 0px;
+    padding: 8px 10px;
     font-family: "JetBrains Mono";
     caret-color: @accent;
 }
 
 entry:focus {
     border-color: @accent;
-    box-shadow: 0 0 4px @accent;
+    box-shadow: 0 0 6px @accent;
 }
 
 button {
     background-color: @bg;
     color: @accent;
     border: 2px solid @accent;
-    border-radius: 4px;
+    border-radius: 0px;
     font-family: "JetBrains Mono";
-    padding: 4px 12px;
+    padding: 6px 14px;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: @panelbg;
-    color: @accent;
+    background-color: @accent;
+    color: @bg;
 }
 
 combobox,
 combobox button {
     background-color: @bg;
     color: @fg;
-    border: 1px solid @accent;
-    border-radius: 3px;
+    border: 1px solid @border;
+    border-radius: 0px;
 }
 
 menu, .menu {
     background-color: @panelbg;
     color: @fg;
-    border: 1px solid @accent;
+    border: 2px solid @border;
+    border-radius: 0px;
 }
 
 menuitem:hover {
-    background-color: @bg;
-    color: @accent;
+    background-color: @accent;
+    color: @bg;
 }

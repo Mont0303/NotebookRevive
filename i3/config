@@ -1,42 +1,41 @@
 # =========================================================
-# i3 config — Tactical Amber Cyberdeck (Motion Plus Q464B)
-# Estilo militar / rádio hacker / HUD tático para Cybersec
+# i3 config — Tactical Military HUD (Cyberdeck Q464B)
 # =========================================================
 
 set $mod Mod4
 font pango:JetBrains Mono 9
 
-# ---------- Cores: Tactical Amber ----------
+# ---------- Cores: Tactical Amber / Military HUD ----------
 set $bg       #0d0e11
 set $bg-alt   #16171d
 set $fg       #e6dfd3
 set $accent   #ff9e3b
 set $dim      #c49e68
-set $inactive #3d352a
+set $inactive #2b2721
 set $urgent   #ff4d4d
 
 # class                 border    backgr.  text    indicator child_border
 client.focused           $accent   $bg      $accent $accent   $accent
-client.unfocused         $bg-alt   $bg      $inactive $bg-alt $bg-alt
-client.focused_inactive  $bg-alt   $bg      $inactive $bg-alt $bg-alt
+client.unfocused         $inactive $bg      $dim    $inactive $inactive
+client.focused_inactive  $inactive $bg      $dim    $inactive $inactive
 client.urgent            $urgent   $bg      $fg     $urgent   $urgent
 
-# ---------- Aparência das janelas ----------
-default_border pixel 2
-default_floating_border pixel 2
-hide_edge_borders smart
-gaps inner 6
+# ---------- Bordas Industriais / Mil-Spec ----------
+default_border pixel 3
+default_floating_border pixel 3
+hide_edge_borders none
+gaps inner 4
 gaps outer 2
-smart_gaps on
+smart_gaps off
 
 # ---------- Layout de teclado ----------
 exec_always --no-startup-id setxkbmap br
 
-# ---------- Notificações ----------
+# ---------- Notificações & Bateria ----------
 exec --no-startup-id dunst
 exec --no-startup-id batsignal -w 20 -c 10 -d 5 -f -i battery -I battery-full
 
-# ---------- Terminal e launcher ----------
+# ---------- Terminal e Launcher ----------
 set $term alacritty
 set $menu rofi -show drun -theme ~/.config/rofi/config.rasi
 
@@ -51,11 +50,8 @@ bindsym $mod+y exec bash -c 'mpv "$(xclip -o -selection clipboard)"'
 bindsym $mod+Shift+b exec $term -e bluetuith
 bindsym $mod+Shift+q kill
 
-# ---------- Scratchpad Tático (Terminal Pop-up de Notas/IPs) ----------
-# Pressione Super+U para mostrar/esconder o terminal de notas flutuante
-# Pressione Super+Shift+U para iniciar uma nova sessão do scratchpad
-bindsym $mod+u [instance="tactical_scratchpad"] scratchpad show
-bindsym $mod+Shift+u exec alacritty --class tactical_scratchpad,tactical_scratchpad
+# ---------- Scratchpad Tático (Terminal Pop-up com 1 Tecla) ----------
+bindsym $mod+u exec ~/.config/i3/scripts/scratchpad-toggle.sh
 
 # ---------- Navegação (estilo vim: h j k l) ----------
 bindsym $mod+h focus left
@@ -68,7 +64,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split e layout
+# Split e Layout
 bindsym $mod+v split v
 bindsym $mod+b split h
 bindsym $mod+f fullscreen toggle
@@ -78,12 +74,12 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-# ---------- Workspaces Táticos para Cybersec ----------
-set $ws1 "1:SYS"
-set $ws2 "2:RECON"
-set $ws3 "3:WEB"
-set $ws4 "4:EXPLOIT"
-set $ws5 "5:LAB"
+# ---------- Workspaces Militares ----------
+set $ws1 "01:SYS"
+set $ws2 "02:RECON"
+set $ws3 "03:WEB"
+set $ws4 "04:EXPL"
+set $ws5 "05:LAB"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -97,12 +93,12 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 
-# ---------- Recarregar / menu de energia ----------
+# ---------- Recarregar / Menu de Energia ----------
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Escape exec ~/.config/i3/scripts/powermenu.sh
 
-# ---------- Resize mode ----------
+# Resize mode
 mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
@@ -113,20 +109,20 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ---------- Brilho e volume ----------
+# Brilho e Volume
 bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness-up.sh
 bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness-down.sh
 bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volume-up.sh
 bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volume-down.sh
 bindsym XF86AudioMute exec ~/.config/i3/scripts/volume-mute.sh
 
-# ---------- Wallpaper e Barra ----------
+# Wallpaper e Barra
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# Lockscreen
+# Lockscreen Militar
 bindsym $mod+Shift+x exec betterlockscreen -l dim
 
-# ---------- Regras de janelas ----------
+# ---------- Regras de Janelas ----------
 for_window [class="mpv"] floating enable, resize set 960 540, move position center
-for_window [instance="tactical_scratchpad"] floating enable, resize set 860 480, move position center, move scratchpad
+for_window [class="tactical_scratchpad"] floating enable, resize set 880 500, move position center, move scratchpad

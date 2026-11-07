@@ -1,10 +1,10 @@
 # =========================================================
-# starship — Tactical Amber Prompt (Cyberdeck Q464B)
+# starship — MIL-SPEC Tactical Prompt (Cyberdeck Q464B)
 # =========================================================
 
 format = """
-[$username](bold #ff9e3b)[@](#70624e)[$hostname](#c49e68)[:](#70624e)[$directory](bold #ffb454)$git_branch$git_status$cmd_duration
-$character"""
+[┌───[](#524737)[MIL-OP:](#a88144)[$username](bold #ff9e3b)[@](#a88144)[$hostname](bold #ff9e3b)[\]───[](#524737)[LOC:](#a88144)[$directory](bold #ffb454)[\]](#524737)$git_branch$git_status$cmd_duration
+[└──►](#ff9e3b) """
 
 [username]
 style_user = "bold #ff9e3b"
@@ -15,35 +15,27 @@ disabled = false
 
 [hostname]
 format = "[$hostname]($style)"
-style = "#c49e68"
+style = "bold #ff9e3b"
 disabled = false
 
 [directory]
 style = "bold #ffb454"
 truncation_length = 3
 truncate_to_repo = true
-format = "[$path]($style) "
+format = "[$path]($style)"
 
 [git_branch]
-style = "#ff9e3b"
-format = "[($branch)]($style) "
+style = "bold #ff9e3b"
+format = "───[GIT:[$branch]($style)\]"
 
 [git_status]
 style = "#c49e68"
-format = "[$all_status]($style) "
+format = "[$all_status]($style)"
 
 [cmd_duration]
 min_time = 2000
-format = "[took $duration]($style) "
+format = "───[TIME:[$duration]($style)\]"
 style = "#c49e68"
 
 [character]
-success_symbol = "[>](bold #ff9e3b)"
-error_symbol = "[!](bold #ff4d4d)"
-vimcmd_symbol = "[<](bold #ff9e3b)"
-
-[battery]
-disabled = false
-format = "[$percentage$symbol]($style) "
-charging_symbol = "[+]"
-discharging_symbol = "[-]"
+disabled = true

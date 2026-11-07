@@ -1,24 +1,19 @@
 # =========================================================
-# betterlockscreen — tela de bloqueio (Motion Plus Q464B)
-# Usa o mesmo wallpaper.png do resto do tema, com um leve
-# escurecimento (dim) pra destacar o relógio.
+# betterlockscreen — MIL-SPEC Tactical Lockscreen (Cyberdeck Q464B)
 # =========================================================
 
-# cor do texto (relógio, "verifying", "wrong password" etc.)
-text_color=39ff5c
+# cor do texto em âmbar militar
+text_color=ff9e3b
 
 # fonte do relógio/hora
 font="JetBrains Mono"
 
-# formato hora/data
-time_format="%H:%M"
-full_date_format="%A, %d de %B"
+# formato hora/data militar
+time_format="%H:%M:%S"
+full_date_format="SYS-DATE // %A, %d/%m/%Y"
 
-# leve blur + dim no wallpaper (sem exagerar, senão o painel de
-# keybindings do wallpaper fica ilegível — só o suficiente pra
-# diferenciar "tela travada" de "tela normal")
-blur_level=1
-dim_level=35
+# dim no wallpaper para aspecto tático
+blur_level=2
+dim_level=45
 
-# desliga o "greeter" de usuário duplicado (já usamos sddm/lightdm)
 greeter_supported=false

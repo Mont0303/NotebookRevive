@@ -1,8 +1,7 @@
 ${c1}
-${c1}    ___ _   _ ___  ___ ___ ___  ___ ___ _  __
-${c1}   / __| \_/ | _ )| __| _ \   \| __/ __| |/ /
-${c1}  | (__ \   /| _ \| _||   / |) | _| (__| ' < 
-${c1}   \___| |_| |___/|___|_|_\___/|___\___|_|\_\
-${c1}
-${c1}   TACTICAL CYBERSEC UNIT :: MOTION PLUS Q464B
-${c1}   [ x5-Z8350 // ACTIVE COOLING // 4GB RAM ]
+${c1}    ╔═══════════════════════════════════════════════════╗
+${c1}    ║   ▲   TACTICAL FIELD TERMINAL // UNIT-Q464B   ▲   ║
+${c1}    ║  / \  SPECIFICATION: MIL-STD-X86 // CYBERSEC / \  ║
+${c1}    ║ /═══\ CLASSIFICATION: TOP SECRET // DISP-01 /═══\ ║
+${c1}    ╚═══════════════════════════════════════════════════╝
+${c1}    [ SERIAL: 2026-X5-Z8350 // ACTIVE THERMAL CONTROL ]
