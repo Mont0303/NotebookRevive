@@ -73,7 +73,7 @@ sudo pacman -S --needed \
     cmus ffmpeg \
     qutebrowser \
     libva-intel-driver libva-utils mesa mpv yt-dlp xclip \
-    picocom nmap btop \
+    picocom nmap btop macchanger xdotool \
     geany \
     starship \
     dunst \

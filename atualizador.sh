@@ -22,7 +22,7 @@ if [ "$1" == "--deps" ]; then
     echo -e "\n${YELLOW}Instalando dependências de vídeo, utilitários e xdotool...${NC}"
     sudo pacman -S --needed --noconfirm \
         libva-intel-driver libva-utils mesa \
-        mpv yt-dlp xclip xdotool \
+        mpv yt-dlp xclip xdotool macchanger \
         picocom nmap btop
     echo -e "${GREEN}✔ Dependências instaladas com sucesso!${NC}\n"
 fi

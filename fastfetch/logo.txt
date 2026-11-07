@@ -1,7 +1,8 @@
 ${c1}
-${c1}    ╔═══════════════════════════════════════════════════╗
-${c1}    ║   ▲   TACTICAL FIELD TERMINAL // UNIT-Q464B   ▲   ║
-${c1}    ║  / \  SPECIFICATION: MIL-STD-X86 // CYBERSEC / \  ║
-${c1}    ║ /═══\ CLASSIFICATION: TOP SECRET // DISP-01 /═══\ ║
-${c1}    ╚═══════════════════════════════════════════════════╝
-${c1}    [ SERIAL: 2026-X5-Z8350 // ACTIVE THERMAL CONTROL ]
+${c1}       /\         CYBERDECK POSITIVO Q464B
+${c1}      /  \        Intel Atom x5-Z8350 // 4GB RAM
+${c1}     /\   \       Active 12V Auxiliary Cooling
+${c1}    /      \      Arch Linux x86_64
+${c1}   /   ,,   \     
+${c1}  /   |  |  -\    
+${c1} /_-''    ''-_\\  

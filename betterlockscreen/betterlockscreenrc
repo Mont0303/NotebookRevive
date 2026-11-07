@@ -1,19 +1,13 @@
 # =========================================================
-# betterlockscreen — MIL-SPEC Tactical Lockscreen (Cyberdeck Q464B)
+# betterlockscreen — Bloqueio Funcional (Cyberdeck Q464B)
 # =========================================================
 
-# cor do texto em âmbar militar
 text_color=ff9e3b
-
-# fonte do relógio/hora
 font="JetBrains Mono"
-
-# formato hora/data militar
 time_format="%H:%M:%S"
-full_date_format="SYS-DATE // %A, %d/%m/%Y"
+full_date_format="%A, %d/%m/%Y"
 
-# dim no wallpaper para aspecto tático
-blur_level=2
-dim_level=45
+blur_level=1
+dim_level=30
 
 greeter_supported=false

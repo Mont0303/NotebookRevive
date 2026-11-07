@@ -1,10 +1,10 @@
 # =========================================================
-# starship — MIL-SPEC Tactical Prompt (Cyberdeck Q464B)
+# starship — Prompt Funcional & Rápido (Cyberdeck Q464B)
 # =========================================================
 
 format = """
-[┌───[](#524737)[MIL-OP:](#a88144)[$username](bold #ff9e3b)[@](#a88144)[$hostname](bold #ff9e3b)[\]───[](#524737)[LOC:](#a88144)[$directory](bold #ffb454)[\]](#524737)$git_branch$git_status$cmd_duration
-[└──►](#ff9e3b) """
+[$username](bold #ff9e3b)[@](#70624e)[$hostname](#c49e68)[:](#70624e)[$directory](bold #ffb454)$git_branch$git_status$cmd_duration
+[>](bold #ff9e3b) """
 
 [username]
 style_user = "bold #ff9e3b"
@@ -15,26 +15,26 @@ disabled = false
 
 [hostname]
 format = "[$hostname]($style)"
-style = "bold #ff9e3b"
+style = "#c49e68"
 disabled = false
 
 [directory]
 style = "bold #ffb454"
 truncation_length = 3
 truncate_to_repo = true
-format = "[$path]($style)"
+format = "[$path]($style) "
 
 [git_branch]
-style = "bold #ff9e3b"
-format = "───[GIT:[$branch]($style)\]"
+style = "#ff9e3b"
+format = "[($branch)]($style) "
 
 [git_status]
 style = "#c49e68"
-format = "[$all_status]($style)"
+format = "[$all_status]($style) "
 
 [cmd_duration]
 min_time = 2000
-format = "───[TIME:[$duration]($style)\]"
+format = "[took $duration]($style) "
 style = "#c49e68"
 
 [character]
